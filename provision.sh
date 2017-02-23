@@ -64,14 +64,14 @@ apache_go() {
 
     <Directory /vagrant/${project_web_root}>
         AllowOverride All
-        Require all granted
+        allow from all
     </Directory>
 </VirtualHost>
 EOF
 	fi
 
 	a2dissite 000-default
-	a2ensite vagrant_vhost
+	a2ensite vagrant_vhost.conf
 
 	a2enmod rewrite
 
